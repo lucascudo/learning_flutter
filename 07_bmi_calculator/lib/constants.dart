@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const double kBottomContainerHeight = 80;
@@ -13,4 +14,28 @@ const TextStyle kLabelTextStyle = TextStyle(
 const TextStyle kNumberTextStyle = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.w900,
+);
+
+const TextStyle kLargeButtonTextStyle = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kTitleTextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+const TextStyle kResultTextStyle = TextStyle(
+  color: Color(0xff24d876),
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kBMITextStyle = TextStyle(
+  fontSize: 100,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kBodyTextStyle = TextStyle(
+  fontSize: 22,
 );
