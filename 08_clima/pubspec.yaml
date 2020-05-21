@@ -12,6 +12,9 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   geolocator: ^5.3.1
+  http: ^0.12.1
+  flutter_dotenv: ^2.1.0
+  flutter_spinkit: ^4.1.2+1
 
 dev_dependencies:
   flutter_test:
@@ -21,7 +24,8 @@ flutter:
   uses-material-design: true
 
   assets:
-  - images/
+    - .env
+    - images/
 
   fonts:
   - family: Spartan MB
