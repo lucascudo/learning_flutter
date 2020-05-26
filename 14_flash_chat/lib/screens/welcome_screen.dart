@@ -14,6 +14,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Animation _animation;
+
   @override
   void initState() {
     super.initState();
