@@ -30,11 +30,13 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: Container(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               SizedBox(
@@ -69,21 +71,21 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 color: Colors.lightBlueAccent,
                 onPressed: () async {
+                  setState(() {
+                    _showSpinner = true;
+                  });
                   try {
-                    setState(() {
-                      _showSpinner = true;
-                    });
                     final loggedInUser = await _auth.signInWithEmailAndPassword(
                         email: _email, password: _password);
                     if (loggedInUser != null) {
                       Navigator.pushNamed(context, ChatScreen.id);
                     }
-                    setState(() {
-                      _showSpinner = false;
-                    });
                   } catch (e) {
                     print(e);
                   }
+                  setState(() {
+                    _showSpinner = false;
+                  });
                 },
                 title: 'Log In',
               ),
