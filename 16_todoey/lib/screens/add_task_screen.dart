@@ -28,18 +28,7 @@ class AddTaskScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
-            ),
-            FlatButton(
-              color: Colors.lightBlueAccent,
-              child: Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                //TODO
-              },
+              onSubmitted: (value) => Navigator.pop(context, value),
             ),
           ],
         ),
