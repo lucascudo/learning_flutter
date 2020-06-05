@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:todoey/models/task.dart';
 
 class TasksListModel extends ChangeNotifier {
