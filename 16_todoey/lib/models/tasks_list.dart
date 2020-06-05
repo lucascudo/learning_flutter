@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/foundation.dart';
 import 'package:todoey/models/task.dart';
 
@@ -10,8 +8,6 @@ class TasksListModel extends ChangeNotifier {
     TaskModel(name: 'UCSAL'),
   ];
 
-  UnmodifiableListView<TaskModel> get tasks => UnmodifiableListView(_tasks);
-
   int get length => _tasks.length;
 
   TaskModel get(index) => _tasks[index];
@@ -21,8 +17,17 @@ class TasksListModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleDoneOfTask(index) {
-    _tasks[index].toggleDone();
-    notifyListeners();
+  void remove(int index) {
+    if (index >= 0 && index < _tasks.length) {
+      _tasks.removeAt(index);
+      notifyListeners();
+    }
+  }
+
+  void toggleDoneOfTask(int index) {
+    if (index >= 0 && index < _tasks.length) {
+      _tasks[index].toggleDone();
+      notifyListeners();
+    }
   }
 }
